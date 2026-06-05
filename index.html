@@ -2,23 +2,103 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet">
   <title>Frontend Mentor | QR code component</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
-    .attribution { font-size: 0.6875rem; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
+    :root {
+      --color-white: hsl(0, 0%, 100%);
+      --color-slate-300: hsl(212, 45%, 89%);
+      --color-slate-500: hsl(216, 15%, 48%);
+      --color-slate-900: hsl(218, 44%, 22%);
+      --font-family: 'Outfit', sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--color-slate-300);
+      font-family: var(--font-family);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+
+    /* Card Container - The "Box" */
+    .qr-card {
+      background-color: var(--color-white);
+      /* Fixed width ensures the image scales to a specific size */
+      width: 320px; 
+      padding: 16px; 
+      border-radius: 20px;
+      box-shadow: 0 25px 25px rgba(0, 0, 0, 0.05);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    /* Image Styling - Makes it fit the box */
+    .qr-card img {
+      /* Fits exactly to the container width (300px inside the 320px box) */
+      width: 100%; 
+      /* Maintains aspect ratio so it doesn't stretch */
+      height: auto; 
+      display: block; 
+      border-radius: 10px;
+      margin-bottom: 24px;
+    }
+
+    .qr-card h1 {
+      color: var(--color-slate-900);
+      font-size: 1.25rem; 
+      font-weight: 700;
+      margin-bottom: 12px;
+      padding: 0 10px;
+      line-height: 1.4;
+    }
+
+    .qr-card p {
+      color: var(--color-slate-500);
+      font-size: 15px; 
+      font-weight: 400;
+      padding: 0 10px;
+      line-height: 1.6;
+      margin-bottom: 10px;
+    }
+
+    .attribution {
+      font-size: 0.75rem;
+      text-align: center;
+      color: var(--color-slate-500);
+    }
+    
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+      text-decoration: none;
+    }
   </style>
 </head>
 <body>
 
-  Improve your front-end skills by building projects
-
-  Scan the QR code to visit Frontend Mentor and take your coding skills to the next level
+  <main class="qr-card">
+    <!-- Updated Image Source -->
+    <img src="https://z-cdn-media.chatglm.cn/files/c2145bcf-df38-46f5-b8cd-cfd3e26dc38f.png?auth_key=1880628031-a81807980965482b963b4ce510cd1d0c-0-8f72696fe2e929abcac0ec34799b417e" alt="QR Code">
+    
+    <h1>Improve your front-end skills by building projects</h1>
+    
+    <p>Scan the QR code to visit Frontend Mentor and take your coding skills to the next level</p>
+  </main>
   
   <footer class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
